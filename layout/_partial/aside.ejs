@@ -1,0 +1,24 @@
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top" style="font-size:23px">
+                <i class="fas fa-angle-up" style="color: #fff;"></i>
+            </a>
+        </div>
+        <% if (!index && ((theme.toc === 1 && post.toc) || theme.toc === 2)){ %>
+        <div class="toc-container tooltip-left" style="font-size:25px;color: #fff;">
+            <i class="fas fa-align-justify"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <%- toc(post.content) || theme.toc_empty_wording %>
+                    </div>
+
+                </span>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</aside>

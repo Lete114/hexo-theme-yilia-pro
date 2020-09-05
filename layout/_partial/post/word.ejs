@@ -1,0 +1,29 @@
+<%if(!index){%>
+<div style="margin-top:10px;">
+    <%if(theme.word_count.wordcount){%>
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="far fa-file-word"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count"><%= wordcount(post.content) %>字</span>
+          </span>
+        </span>
+    <%}%>
+    <%if(theme.word_count.min2read){%>
+    &nbsp; | &nbsp;
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="far fa-clock fa-fw"></i>
+            <span class="post-meta-item-text">  阅读时长: </span>
+            <span class="post-count"><%= min2read(post.content) %>分</span>
+          </span>
+        </span>
+    <%}%>
+    <%if(theme.busuanzi.read){%>
+    &nbsp; | &nbsp;
+        <span id="busuanzi_container_page_pv" style='display:none;float: none;color: #333' class="archive-article-date">
+              <i class="fas fa-eye"></i> 阅读数:<span id="busuanzi_value_page_pv"></span>次
+        </span>
+    <%}%>
+</div>
+<%}%>

@@ -1,0 +1,229 @@
+
+/* 滚动条 */
+::-webkit-scrollbar  
+  width 10px;
+  height 10px;
+ 
+
+::-webkit-scrollbar-thumb
+  if hexo-config("themes.scrollbar_color")==null || hexo-config("themes.entirety_color")==null
+    background-color #e58a8a
+  else
+    background-color convert(hexo-config("themes.entirety_color"))
+  background-image -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+  border-radius 2em
+
+
+::-webkit-scrollbar-corner  
+  background-color transparent;
+ 
+::-moz-selection
+  color #fff
+  if hexo-config("themes.scrollbar_color")==null || hexo-config("themes.entirety_color")==null
+    background-color #e58a8a
+  else
+    background-color convert(hexo-config("themes.entirety_color"))
+
+/*去掉目录滚动条*/
+.toc-article::-webkit-scrollbar 
+  display none;
+ 
+
+/*标题左侧色块*/
+.article-header
+  border-left 5px solid hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+  padding 30px 0 15px 25px
+  padding-left 7.6923%
+
+/*展开全部内容*/
+.article-more-link
+  a
+    background hexo-config('themes.article_more')==null?#4d4d4d:convert(hexo-config('themes.article_more'))
+  :hover
+    background hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+
+/*目录颜色*/
+.tooltip-content
+  background hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+
+/*icon图标旋转*/
+.link-item i:hover
+  -webkit-transform rotate(540deg);
+  -moz-transform rotate(540deg);
+  -o-transform rotate(540deg);
+  -ms-transform rotate(540deg);
+  transform rotate(540deg);
+  -webkit-transition all 0.3s;
+  -moz-transition all 0.3s;
+  -o-transition all 0.3s;
+  -ms-transition all 0.3s;
+  transition all 0.3s;
+
+.inner .profilepic img:hover
+  -webkit-transform rotate(360deg);
+  -moz-transform rotate(360deg);
+  -o-transform rotate(360deg);
+  -ms-transform rotate(360deg);
+  transform rotate(360deg);
+  -webkit-transition all 0.5s;
+  -moz-transition all 0.5s;
+  -o-transition all 0.5s;
+  -ms-transition all 0.5s;
+  transition all 0.5s;
+  -image -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+  border-radius 2em
+
+
+::-webkit-scrollbar-corner  
+  background-color transparent;
+ 
+::-moz-selection
+  color #fff
+  if hexo-config("themes.scrollbar_color")==null || hexo-config("themes.entirety_color")==null
+    background-color #e58a8a
+  else
+    background-color convert(hexo-config("themes.entirety_color"))
+
+/*背景颜色*/
+if hexo-config("themes.bg_img") != null
+  body
+    background convert(hexo-config("themes.bg_img"));
+  .article
+    background hexo-config("themes.article") == null?#fff:convert(hexo-config("themes.article"))
+  .mid-col
+    background transparent
+  .left-col
+    background hexo-config("themes.article") == null?#fff:convert(hexo-config("themes.article"))
+  .overlay
+    background transparent
+
+.comments#comments
+  if hexo-config("themes.article") == null || hexo-config("themes.bg_img") == null
+    background #fff
+  else
+    background convert(hexo-config("themes.article"))
+  .vicon
+    fill hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+  .vcol button
+    color hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+    border-color hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+    &:hover
+      color #fff
+      background hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+  .vcount
+    color hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color')) !important
+  .vmeta .vat
+    border 1px solid hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color')) !important
+    color hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color')) !important
+    padding: 3px 20px;
+    &:hover
+      color #fff !important
+      cursor pointer
+      background hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color')) !important
+  .vwrap
+    box-shadow 2px 2px 5px #bbb
+    border-color transparent
+  .vcard
+    box-shadow 2px 2px 5px #bbb
+    background rgba(255, 255, 255, 0.3)
+    border-radius 8px
+    padding 30px
+    margin 30px 0px 0px 0px
+  .vquote .vcard
+    box-shadow 2px 2px 5px transparent
+    background rgba(255, 255, 255, 0.0)
+    padding 0px
+
+
+if hexo-config("themes.mobile_bg_img") != null
+  @media screen and (max-width 800px)
+    body
+      background convert(hexo-config("themes.mobile_bg_img"));
+    .mid-col
+      background hexo-config("themes.mobile_bg_img") == ''?#eaeaea:transparent
+    .article
+      hexo-config("themes.article") == null?#fff:convert(hexo-config("themes.article"))
+else
+  @media screen and (max-width 800px)
+    body
+      background #eaeaea
+
+
+body
+  position fixed;
+  z-index -999;
+  width 100%;
+  height 100%;
+  background-attachment local;
+  background-position center;
+  -webkit-background-size cover;
+  -moz-background-size cover;
+  background-size cover;
+  background-repeat no-repeat;
+
+
+/*版权框两边颜色*/
+.post-copyright  
+  position relative;
+  margin 2rem 0 0.5rem;
+  padding 0.5rem 0.8rem;
+  -webkit-transition box-shadow 0.3s ease-in-out;
+  -moz-transition box-shadow 0.3s ease-in-out;
+  -o-transition box-shadow 0.3s ease-in-out;
+  -ms-transition box-shadow 0.3s ease-in-out;
+  transition box-shadow 0.3s ease-in-out;
+  box-shadow 0 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border-radius 10px;
+  border-left 2px solid hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+  border-right 2px solid hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+ 
+/*版权右上角小圆圈*/
+.post-copyright
+  :before
+    position absolute;
+    top 0.5rem;
+    right 0.5rem;
+    width 0.8rem;
+    height 0.8rem;
+    border-radius 50%;
+    background hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+    content '';
+  :after
+    position absolute;
+    top 0.7rem;
+    right 0.7rem;
+    width 0.4rem;
+    height 0.4rem;
+    border-radius 50%;
+    content '';
+    background #fff
+
+/*标题前面的图标与旋转*/
+@keyframes auto_rotate  
+  from  
+    transform rotate(0)
+   
+  to  
+    transform rotate(convert(hexo-config("rotate_deg")))
+   
+ 
+ 
+
+/*鼠标悬停版权*/
+.post-copyright:hover  
+  box-shadow 0 0px 7px 0px rgba(0, 0, 0, 0.4);
+ 
+/*版权信息标题*/
+.post-copyright .post-copyright-meta
+  color hexo-config('themes.entirety_color')==null?#e58a8a:convert(hexo-config('themes.entirety_color'))
+  font-weight bold;
+
+
+
+/*选中文字颜色*/
+::selection
+  color hexo-config("themes.selection_text")==null?#fff:convert(hexo-config("themes.selection_text"))
+  background hexo-config("themes.selection_text_bg")==null?#00c4b6:convert(hexo-config("themes.selection_text_bg"))
+
+#container.show
+  background convert(hexo-config("themes.slider")) !important

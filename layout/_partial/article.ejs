@@ -1,0 +1,83 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> <%if(index){%> article-index<%}%>" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <% if (post.link || post.title){ %>
+      <header class="article-header">
+        <%- partial('post/title', {class_name: 'article-title'}) %>
+        <% if (!post.noDate){ %>
+        <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
+
+        <!-- 开始添加字数统计-->
+        <% if(theme.word_count.enable && !post.no_word_count){%>
+        <%- partial('post/word') %>
+        <% } %>
+
+        <% } %>
+      </header>
+    <% } %>
+
+    <div class="article-entry" itemprop="articleBody">
+        <% if (post.excerpt && index){ %>
+          <%- post.excerpt %>
+            <!--cover-->
+            <% if (post.cover){ %>
+              <img src="<%-post.cover%>" style="pointer-events: none;width: 100%" alt="封面">
+            <%}%>
+        <% } else { %>
+          <%- post.content %>
+        <% } %>
+
+      <!--版权-->
+      <%- partial('copyright')%>
+      <!--打赏-->
+      <%- partial('reward')%>
+
+
+    </div>
+    <div class="article-info article-info-index">
+      <%if(post.top){%>
+        <div class="article-pop-out tagcloud">
+          <i class="fas fa-thumbtack"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      <% } %>
+      <%- partial('post/tag') %>
+      <%- partial('post/category') %>
+      <% if (index && theme.show_all_link){ %>
+        <p class="article-more-link">
+          <a class="article-more-a" href="<%- url_for(post.path) %>"><%= theme.show_all_link %> >></a>
+        </p>
+      <% } %>
+
+      <% if (!index && theme.share_jia){ %>
+        <%- partial('post/share') %>
+      <% } %>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+</article>
+<% if (!index){ %>
+  <%- partial('post/nav') %>
+<% } %>
+<%- partial('_partial/aside') %>
+
+
+<% if (!index && post.comments){ %>
+
+<% if ((theme.comment === 2 || (theme.comment === 1 && post.comment)) && !index){ %>
+<% if (theme.valine && theme.valine.appId && theme.valine.appKey){ %>
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;}}
+  </style>
+  <%- partial('comment/valine', {
+    key: post.slug,
+    title: post.title,
+    url: config.url+url_for(post.path)
+  }) %>
+</section>
+<% } %>
+<% } %>
+
+<% } %>

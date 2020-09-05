@@ -1,0 +1,7 @@
+<span style="margin-right: 3%;" class="<%= class_name %>">
+    <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><i class="fas fa-calendar-alt" style="margin: 5px;"></i><%= date(post.date, date_format) %></time>
+    <%if(theme.update){%>
+        &nbsp; | &nbsp;
+        <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><i class="fas fa-history " style="margin: 5px;"></i><%- date(post.updated, 'YYYY-MM-DD') %></time>
+    <%}%>
+</span>
