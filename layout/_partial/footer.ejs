@@ -1,7 +1,7 @@
-<footer id="footer">
+<footer id="footer" xmlns="http://www.w3.org/1999/html">
 	<div class="outer">
 		<div id="footer-info">
-			<div class="footer-left">
+			<div class="footer-left" >
 				<% var now = new Date().getFullYear(); %>
 				&copy; <%- theme.Copyright === now ? theme.Copyright : (theme.Copyright + " - " + now) %>
 				<i style="padding: 0 5px;color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i>
@@ -12,22 +12,30 @@
 			</div>
 		</div>
 	</div>
-	<div>
-		<!-- 添加网站CDN加速-->
+	<div class="footer-center">
+
 		<%if(theme.CDN.enable){%>
-		<a style="position: relative;left: -14px;" href="<%-url_for(theme.CDN.url)%>" target="_blank" rel="noopener" class="one-pan-link-mark">
-			<img style="position:relative;top:-2px; " src="<%-theme.CDN.icon%>" align="absmiddle" width="60px" height="30px"><%-theme.CDN.text%>
-		</a><br/>
+		<!-- 添加网站CDN加速-->
+		<div>
+			<a style="position: relative;" href="<%-url_for(theme.CDN.url)%>" target="_blank" rel="noopener" class="one-pan-link-mark">
+				<img style="position:relative;top:-2px; " src="<%-theme.CDN.icon%>" align="absmiddle" width="60px" height="30px"><%-theme.CDN.text%>
+			</a>
+		</div>
 		<%}%>
-		<!-- 添加网站运行年份-->
+
 		<%if(theme.ICP.enable){%>
-		<a style="position: relative;" href="<%- url_for(theme.ICP.url) %>" target="_blank" rel="noopener" one-link-mark="yes">
-			<img style="position:absolute; left: -26px;top: 1px;" src="<%-theme.ICP.icon%>" alt="ICP"/><%-theme.ICP.text%></a><br/>
+		<div>
+			<a style="position: relative;" href="<%- url_for(theme.ICP.url) %>" target="_blank" rel="noopener" one-link-mark="yes">
+				<img style="position:absolute; left: -26px;top: 1px;" src="<%-theme.ICP.icon%>" alt="ICP"/><%-theme.ICP.text%>
+			</a>
+		</div>
 		<%}%>
-		<!--添加网站运行时间  <br/>-->
+
 		<% if (theme.run_time.enable){ %>
-		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-	</div>
+		<!--添加网站运行时间  <br/>-->
+		<div>
+			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		</div>
 	<script>
 		var now = new Date();
 		function createtime() {
@@ -47,13 +55,16 @@
 	<% } %>
 	<% if (theme.busuanzi && theme.busuanzi.enable){ %>
 	<!-- 不蒜子统计 -->
-        <span id="busuanzi_container_site_pv">
-                本站总访问量<span id="busuanzi_value_site_pv"></span>次
-        </span>
-	<span class="post-meta-divider">|</span>
-        <span id="busuanzi_container_site_uv" style='display:none'>
-                本站访客数<span id="busuanzi_value_site_uv"></span>人
-        </span>
+		<div>
+				<span id="busuanzi_container_site_pv">
+					本站总访问量<span id="busuanzi_value_site_pv"></span>次
+				</span>
+			<span class="post-meta-divider">|</span>
+				<span id="busuanzi_container_site_uv" style='display:none'>
+					本站访客数<span id="busuanzi_value_site_uv"></span>人
+				</span>
+		</div>
+	</div>
 	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	<% } %>
 </footer>
