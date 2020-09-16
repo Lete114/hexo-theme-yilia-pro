@@ -8,7 +8,7 @@ Yilia 是由 **[litten](https://github.com/litten)** 在2014年9月开发
 Yilia-Pro 由 **[Lete乐特](https://github.com/lete114)** 在2020年9月进行优化更新
 
                         
-## 一、使用
+## 使用
 
 #### 安装
 
@@ -20,7 +20,7 @@ git clone https://github.com/lete114/hexo-theme-yilia-pro.git themes/Yilia-Pro
 
 修改hexo根目录下的 `_config.yml` ： `theme: Yilia-Pro`
 
-## 四、配置
+## 配置
 
 在原Yilia基础上增加的功能
 
