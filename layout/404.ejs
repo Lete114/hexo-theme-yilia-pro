@@ -1,0 +1,47 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="<%= theme.author %>">
+    <meta name="description" content="<%= config.description %>">
+    <meta name="keywords" content="<%- config.keywords %>">
+    <title><%= theme.author %> | <%-theme.error_404.text%></title>
+    <link rel="icon" href="<%= theme.favicon %>">
+    <%- css('css/404.css') %>
+    <%- partial('_partial/analytics') %>
+</head>
+<body>
+    <div class="intro">
+        <div class="avatar">
+            <a href="/"><img src="<%- theme.avatar %>" alt="<%= theme.author %>"></a>
+        </div>
+        <div class="name"><%= theme.author %></div>
+        <div class="error_404">
+            <p><%- theme.error_404.text %></p>
+
+            <p><span id="jumpTo">30</span>秒后自动跳转回首页</p>
+        </div>
+        <div class="box">
+            <button class="homebtn button button--antiman button--round-l button--text-medium" onClick="window.open('/','_self')">返回首页</button>
+        </div>
+    </div>
+    <audio <%- theme.error_404.music%>></audio>
+<script type="text/javascript">
+    var i = <%-theme.error_404.sec %>;
+    function remainTime() {
+        if (i == 0) {
+            location.href = '/';
+        }
+        document.getElementById('jumpTo').innerHTML = i--;
+        setTimeout("remainTime()", 1000);
+    }
+    remainTime();
+</script>
+</body>
+</html>

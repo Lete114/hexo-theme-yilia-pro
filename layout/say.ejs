@@ -1,0 +1,35 @@
+<%- css('css/say.css') %>
+<say class="say">
+    <div class="title">
+        <span id="title" ></span><span id="cursor">|</span>
+        <%if(theme.say.desc!=null){%>
+            <br>
+            <span id="subtitle"><%=theme.say.desc%></span>
+        <%}%>
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/artitalk"></script>
+    <div id="artitalk_main"></div>
+    <script>
+        /*打字效果*/
+        var subtitle = document.getElementById('title')
+        var i = 0;
+
+        function typing() {
+            var timer = 0;
+            var str = '<%= theme.say.title%>';
+            if (i <= str.length) {
+                subtitle.innerHTML = str.slice(0, i++)
+                timer = setTimeout(typing, 300)
+            } else {
+                subtitle.innerHTML = str
+                clearTimeout(timer)
+            }
+        }
+        typing()
+
+        new Artitalk({
+            appId: '<%=theme.say.appId%>',
+            appKey: '<%=theme.say.appKey%>'
+        })
+    </script>
+</say>

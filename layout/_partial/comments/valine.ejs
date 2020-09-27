@@ -1,29 +1,9 @@
-<div style="margin: 10px;" class="comment-headline">
-    <i style="font-size: 1.5em;" class="fas fa-comments fa-fw"></i>
-    <span style="position: relative;left: 10px;font-size: 22px;"> 评论</span>
-</div>
 <div id="vcomment" class="comment" data-class="v">
 </div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.js"></script>
 <script>
     window.onload = function() {
-        function emoji(path, idx, ext) {
-            return path + "/" + path + "-" + idx + "." + ext;
-        }
-        var emojiMaps = {};
-        for (var i = 1; i <= 51; i++) {
-            emojiMaps['lete114-' + i] = emoji('lete1', i, 'gif');
-        }
-        for (var i = 1; i <= 54; i++) {
-            emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-        }
-        for (var i = 1; i <= 101; i++) {
-            emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-        }
-        for (var i = 1; i <= 116; i++) {
-            emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-        }
         new Valine({
             el: '.comment',
             app_id: "<%= theme.valine.appId %>",
@@ -37,7 +17,7 @@
             serverURLs: "<%= theme.valine.serverURLs %>",
             enableQQ: "<%= theme.valine.enableQQ %>",
             emojiCDN: "<%= theme.valine.emojiCDN %>",
-            emojiMaps: emojiMaps,
+            emojiMaps: "<%= theme.valine.emojiMaps %>",
             path: window.location.pathname
         });
     }

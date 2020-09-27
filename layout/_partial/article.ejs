@@ -26,7 +26,6 @@
           <%- post.content %>
         <% } %>
 
-      <!--版权-->
       <%- partial('copyright')%>
       <!--打赏-->
       <%- partial('reward')%>
@@ -61,23 +60,21 @@
 <% } %>
 <%- partial('_partial/aside') %>
 
+<% if (theme.comments && !index){ %>
+  <% if (post.comments==null || post.comments){ %>
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;}}
+      </style>
+      <div style="margin: 10px;" class="comment-headline">
+        <i style="font-size: 1.5em;" class="fas fa-comments fa-fw"></i>
+        <span style="position: relative;left: 10px;font-size: 22px;"> 评论</span>
+      </div>
+      <% if (theme.valine && theme.valine.appId && theme.valine.appKey){ %>
+      <%- partial('comments/valine') %>
+      <% } %>
 
-<% if (!index && post.comments){ %>
-
-<% if ((theme.comment === 2 || (theme.comment === 1 && post.comment)) && !index){ %>
-<% if (theme.valine && theme.valine.appId && theme.valine.appKey){ %>
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;}}
-  </style>
-  <%- partial('comment/valine', {
-    key: post.slug,
-    title: post.title,
-    url: config.url+url_for(post.path)
-  }) %>
-</section>
-<% } %>
-<% } %>
-
+    </section>
+  <% } %>
 <% } %>

@@ -22,7 +22,7 @@ git clone https://github.com/lete114/hexo-theme-yilia-pro.git themes/Yilia-Pro
 
 ## 配置
 
-在原Yilia基础上增加的功能
+在原Yilia基础上增加的功能(下方是第一个版本添加的功能，详细更新日志：[更新日志](ChangeLogs.md))
 
 1. 标题前添加图标(可旋转)
 2. 自定义图标
@@ -62,6 +62,37 @@ menu:
   导航网: https://nav.lete114.top/
   蝴蝶主题: https://butterfly.lete114.top
 
+# 是否需要修改 root 路径
+# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
+# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+root: https://yilia.lete114.top/
+
+# 搜索框描述
+search:
+  desc: find something…
+
+# 昵称
+author: Lete乐特
+author_color: '#ff7242' # 左侧栏昵称颜色
+footer_author: / # 点击跳转到  输入 '/' 跳转到首页
+footer_author_newPage: false # 点击后是否打开新页面
+
+# 图标
+favicon: /img/favicon.ico
+
+#你的头像url
+avatar: /img/avatar.png
+# 邮箱
+mail: lete@lete114.top
+
+# 版权
+copy: true #md文件里设置copy:false属性，此文章无版权
+# 网站启动年份
+Copyright: 2019
+# 网站运行时间
+run_time:
+ enable: true
+ create_time: '04/15/2020 12:00:00' #此处修改你的建站时间或者网站上线时间
 
 # 参考：https://getkit.cn/resources/font-awesome/
 # 标题icon图标
@@ -73,19 +104,19 @@ title_prefix_icon_color: '#00c4b6' # 图标颜色
 # SubNav
 font_size: 20px # 图标大小
 subnav:
-  iconfont icon-youxiang: mailto:lete@lete114.top
-  iconfont icon-github3: https://github.com/lete114
-  iconfont icon-icon_doc_fill: https://blog.lete114.top
-  iconfont icon-lianjie: https://blog.lete114.top/link/
-  iconfont icon-csdn: https://me.csdn.net/Lott0419
-  iconfont icon-zhihu: https://www.zhihu.com/people/lete114
+  fab fa-github: https://github.com/lete114
+  fas fa-book: https://blog.lete114.top
+  fas fa-link: https://blog.lete114.top/link/
+
+# 自定义标题切换
+amusing_title:
+  enable: true
+  leave_title: '(つェ⊂) 我藏好了哦~ '
+  return_title: '(*´∇｀*) 被你发现啦~ '
 
 
-# 图标
-favicon: /img/favicon.ico
-
-#你的头像url
-avatar: /img/avatar.png
+## 代码块样式
+highlight_theme: mac # default / darker / pale night / light / ocean / mac / mac light / false
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 themes:
@@ -107,54 +138,12 @@ themes:
   mobile_nav: '#00c4b6' # 头像下方导航文字颜色
   pc_nav: '#00c4b6'
 
-## 代码块样式
-highlight_theme: mac # default / darker / pale night / light / ocean / mac / mac light / false
-
-
-# 是否开启字数统计
-word_count:
- enable: true
- wordcount: true # 字数统计
- min2read: true # 阅读时长统计
-
-# 是否开启访问量统计功能(不蒜子)
-busuanzi:
- enable: true
- read: false # 开启阅读数
-
-# 是否开启文章最新更新时间
-update: true
-
-# 自定义标题切换
-amusing_title:
-  enable: true
-  leave_title: '(つェ⊂) 我藏好了哦~ '
-  return_title: '(*´∇｀*) 被你发现啦~ '
-
-# 搜索框描述
-search:
-  desc: find something…
-
-# 昵称
-author: Lete乐特
-author_color: '#ff7242' # 左侧栏昵称颜色
-footer_author: / # 点击跳转到  输入 '/' 跳转到首页
-footer_author_newPage: false # 点击后是否打开新页面
-
-
-# 网站启动年份
-Copyright: 2019
-# 网站运行时间
-run_time:
- enable: true
- create_time: '04/15/2020 12:00:00' #此处修改你的建站时间或者网站上线时间
-
 # ICP备案
 ICP:
-  enable: true
+  enable: false
   icon: /img/icp.png
-  url: http://www.beian.miit.gov.cn/
-  text: 
+  url:
+  text:
 
 # CDN加速
 CDN:
@@ -164,10 +153,29 @@ CDN:
   text: 提供加速服务
 
 
-# 是否需要修改 root 路径
-# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
-# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: https://yilia.lete114.top/
+# 字数统计
+word_count:
+ enable: true
+ wordcount: true # 字数统计
+ min2read: true # 阅读时长统计
+
+# 访问量统计功能(不蒜子)
+busuanzi:
+ enable: true
+ read: false # 开启阅读数
+
+# 是否开启文章最新更新时间
+update: true
+
+## artitalk 说说
+say:
+  enable: true
+  appId: WhOxxxxxYDhd1BxxxxxxMdYXbMMI #你的 leancloud app id
+  appKey: M9xxxv1yGlkfxxxxxxxx3Kvs #你的 leancloud app key
+  title: 唠叨唠叨 # 标题
+  desc: # 描述(副标题)
+
+
 
 # Content
 # 展开全文
@@ -178,8 +186,7 @@ mathjax: false
 open_in_new: false
 
 # 打赏
-# 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward: true #  md文件里有reward: false属性则当前文章不显示打赏
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
@@ -199,26 +206,61 @@ toc_empty_wording: '目录，不存在的…'
 share_jia: true
 
 
-# 版权
-copy: 2 #0-关闭版权； 1-文章对应的md文件里有copy:true属性，才有版权； 2-所有文章均有版权
 # 评论
-comment: 2 #0-关闭评论； 1-文章对应的md文件里有comment:true属性，才有评论； 2-所有文章均有评论
-
+comments: true #md文件里设置comments:false属性，此文章无评论
 
 # valine
 # https://valine.js.org
 valine:
-  master: 2a77xxxxxxxxxxxxxx4cd7f4442e2 # 你的邮箱md5加密(百度搜索md5在线加密)
-  friends: ed5bb6xxxxxxxxxxxxxb7c3aaee6893b,d24719xxxxxxxxxxxxx51909bac991457 # 你的小伙伴的md5邮箱加密
-  appId: qvkfTxxxxxxxxxxxxn-MdYXbMMI # 你的 leancloud app id
-  appKey: WOURxxxxxxxxxxxtwTyWJrog # 你的 leancloud app key
+  master: 2a776xxxxxxxxx4cd7f4442e2 # 你的邮箱md5加密(百度搜索md5在线加密)
+  friends: ed5bb6xxxxxxxxxab7c3aaee6893b,d24719e3b7a6xxxxxxxxac991457 # 你的小伙伴的md5邮箱加密
+  appId: qvkfTxFxxxxxxxxxxn-MdYXbMMI # 你的 leancloud app id
+  appKey: WOUxxxxxxxxxyWJrog # 你的 leancloud app key
   pageSize: 5 # 评论列表分页，每页条数。
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja 语言
   placeholder: 建议使用QQ邮箱，评论头像采用QQ头像，其他邮箱会随机分配头像 #评论框占位符
   recordIP: true # 记录评论者IP
   serverURLs: # 该配置适用于国内自定义域名用户, 海外版本会自动检测(无需手动填写)
-  emojiCDN: https://cdn.jsdelivr.net/gh/lete114/CDN2/emoji/valine/  # 设置表情包CDN，参考自定义表情(https://valine.js.org/emoji.html)
+  emojiCDN:  # 设置表情包CDN，参考自定义表情(https://valine.js.org/emoji.html)
   enableQQ: true # 使昵称框自动获得QQ昵称和QQ头像
+  emojiMaps: # 表情包图片
+
+# 自定义css js
+import:
+  css:
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+  js:
+    -
+    #- <script src="https://blog.lete114.top/js/Lete.js"></script>
+  style_script:
+    -
+    - <style>/*修改图标颜色*/ .fa-github{color:#000} .fa-book{color:#709fb0} .fa-link{color:#a37eba} </style>
+    # (如上)不想另建css文件引入可以直接写样式
+
+# 百度统计&谷歌统计
+analytics:
+  baidu: 'ab2d808c5ec8e10d08db3396ec9ac2b9'
+  google:
+
+# 404 page
+error_404:
+  enable: true
+  sec: 30
+  name_color: '#80bdab'
+  color: '#e58a8a'
+  text: '404！页面君找不到这个网页！！'
+  bg_img: url("https://cdn.jsdelivr.net/gh/lete114/CDN2/img/wei_er_li_te/3.jpg")
+  music:
+      ### autoplay=自动播放 | loop=循环播放 | controls=显示控件 | muted=静音 | src=音频地址
+      ### 不推荐：controls、muted、preload
+      ### preload=音频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性
+      autoplay
+      loop
+      src
+
+
+
+## --------------------没事就别动下面的配置了--------------------
 
 # slider的设置
 slider:
@@ -245,26 +287,6 @@ friends:
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
-
-
-# 自定义css js
-import:
-  css:
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-#    - <link rel="stylesheet" href="https://blog.lete114.top/css/index.css">
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@master/butterfly/css/iconfont.min.css">
-  js:
-    -
-    #- <script src="https://blog.lete114.top/js/Lete.js"></script>
-  style_script:
-    -
-    - <style>/*修改github图标颜色*/ .icon-github3{color:#000} /*修改博客图标颜色*/ .icon-icon_doc_fill{color:#e58a8a} </style>
-    # (如上)不想另建css文件引入可以直接写样式
-
-# 百度统计&谷歌统计
-analytics:
-  baidu: 'ab2d808c5ec8e10d08db3396ec9ac2b9'
-  google:
 ```
 
 ## 其他项目

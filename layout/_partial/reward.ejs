@@ -1,4 +1,6 @@
-<% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
+
+<% if (theme.reward && !index){ %>
+    <% if (post.reward==null||post.reward){ %>
 <div class="page-reward">
     <a href="javascript:;" class="page-reward-btn tooltip-top">
         <div class="tooltip tooltip-east">
@@ -29,4 +31,5 @@
         </div>
     </a>
 </div>
+<% } %>
 <% } %>

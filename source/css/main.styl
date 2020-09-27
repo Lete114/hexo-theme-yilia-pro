@@ -444,6 +444,8 @@ body
 
 .left-col .header-smart-menu a
   color hexo-config("themes.pc_nav")==null?#00c4b6:convert(hexo-config("themes.pc_nav"))
+  position relative
+  right 5px
 
 .left-col #header .header-menu li a:hover
   font-size 14px
@@ -2209,11 +2211,12 @@ body
 #footer
   color hexo-config("themes.footer_text")==null?#212121:convert(hexo-config("themes.footer_text"))
   font-size 16px
-  position absolute
   margin-bottom 30px;
   opacity .6
   width 100%
   text-align center
+  position absolute
+  bottom 0
   a
     color hexo-config("themes.footer_text_a")==null?#00c4b6:convert(hexo-config("themes.footer_text_a"))
 
@@ -2230,10 +2233,10 @@ body
   float right
 
 
-.footer-center
+/*.footer-center
   position: absolute;
   width: 100%;
-  top: 150%;
+  top: 150%;*/
 
 @media screen and (max-width 800px)
    
@@ -3336,3 +3339,7 @@ a.pswp__share--download:hover
 .pswp__error-msg a
   color #ccc
   text-decoration underline
+
+
+#wrapper
+  margin-bottom: 20%;
