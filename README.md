@@ -80,7 +80,7 @@ footer_author_newPage: false # 点击后是否打开新页面
 # 图标
 favicon: /img/favicon.ico
 
-#你的头像url
+# 你的头像url
 avatar: /img/avatar.png
 # 邮箱
 mail: lete@lete114.top
