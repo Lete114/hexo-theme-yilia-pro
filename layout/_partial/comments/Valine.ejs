@@ -1,0 +1,24 @@
+<div id="vcomment" class="comment" data-class="v">
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.js"></script>
+<script>
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            app_id: "<%= theme.Valine.appId %>",
+            app_key: "<%= theme.Valine.appKey %>",
+            master: "<%= theme.Valine.master %>",
+            friends: "<%= theme.Valine.friends %>",
+            placeholder: "<%= theme.Valine.placeholder %>",
+            lang: "<%= theme.Valine.lang %>",
+            pageSize: "<%= theme.Valine.pageSize %>",
+            recordIP: "<%= theme.Valine.recordIP %>",
+            serverURLs: "<%= theme.Valine.serverURLs %>",
+            enableQQ: "<%= theme.Valine.enableQQ %>",
+            emojiCDN: "<%= theme.Valine.emojiCDN %>",
+            emojiMaps: "<%= theme.Valine.emojiMaps %>",
+            path: window.location.pathname
+        });
+    }
+</script>

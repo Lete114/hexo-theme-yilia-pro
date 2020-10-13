@@ -1,33 +1,33 @@
-
-/* 滚动条 */
-::-webkit-scrollbar  
-  width 10px;
-  height 10px;
- 
-
-::-webkit-scrollbar-thumb
-  if hexo-config("themes.scrollbar_color")==null || hexo-config("themes.entirety_color")==null
-    background-color #e58a8a
-  else
-    background-color convert(hexo-config("themes.entirety_color"))
-  background-image -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
-  border-radius 2em
+@media screen and (min-width 800px)
+  /* 滚动条 */
+  ::-webkit-scrollbar
+    width 10px;
+    height 10px;
 
 
-::-webkit-scrollbar-corner  
-  background-color transparent;
- 
-::-moz-selection
-  color #fff
-  if hexo-config("themes.scrollbar_color")==null || hexo-config("themes.entirety_color")==null
-    background-color #e58a8a
-  else
-    background-color convert(hexo-config("themes.entirety_color"))
+  ::-webkit-scrollbar-thumb
+    if hexo-config("themes.scrollbar_color")==null || hexo-config("themes.entirety_color")==null
+      background-color #e58a8a
+    else
+      background-color convert(hexo-config("themes.entirety_color"))
+    background-image -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+    border-radius 2em
 
-/*去掉目录滚动条*/
-.toc-article::-webkit-scrollbar 
-  display none;
- 
+
+  ::-webkit-scrollbar-corner
+    background-color transparent;
+
+  ::-moz-selection
+    color #fff
+    if hexo-config("themes.scrollbar_color")==null || hexo-config("themes.entirety_color")==null
+      background-color #e58a8a
+    else
+      background-color convert(hexo-config("themes.entirety_color"))
+
+  /*去掉目录滚动条*/
+  .toc-article::-webkit-scrollbar
+    display none;
+
 
 /*标题左侧色块*/
 .article-header
@@ -94,8 +94,6 @@ if hexo-config("themes.bg_img") != null
     background transparent
   .left-col
     background hexo-config("themes.article") == null?#fff:convert(hexo-config("themes.article"))
-  .overlay
-    background transparent
 
 .comments#comments
   if hexo-config("themes.article") == null || hexo-config("themes.bg_img") == null

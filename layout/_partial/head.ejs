@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%-config.language%>">
 <head>
   <meta charset="utf-8">
   <%
@@ -19,21 +19,24 @@
     title = 'Tag: ' + page.tag;
   }
   %>
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="<%= config.url %>">
-  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
 
-    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
-    <link rel="icon" href="<%- theme.favicon %>">
-  <%- css('css/index.css') %>
-  <style type="text/css">
-  <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
-    #container.show {
-      background: <%= theme.style && theme.style.slider ? theme.style.slider : defaultCtnBg %>;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <meta name="description" content="<%=config.description%>">
+  <meta name="author" content="<%=config.avatar%>">
+  <meta name="copyright" content="<%=config.avatar%>">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="shortcut icon" href="<%=theme.favicon%>">
+  <link rel="canonical" href="<%= config.url %>">
+  <meta property="og:type" content="website">
+  <meta name="renderer" content="webkit">
+  <link rel="dns-prefetch" href="<%= config.url %>">
+  <meta property="og:title" content="<%=config.title%>">
+  <meta property="og:url" content="<%= config.url %>">
+  <meta property="og:site_name" content="<%=config.title%>">
+  <meta property="og:image" content="<%=theme.avatar%>">
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %><%- css('css/index.css') %>
   <%- partial('analytics') %>
 </head>

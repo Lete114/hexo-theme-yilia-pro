@@ -71,10 +71,11 @@
         <i style="font-size: 1.5em;" class="fas fa-comments fa-fw"></i>
         <span style="position: relative;left: 10px;font-size: 22px;"> 评论</span>
       </div>
-      <% if (theme.valine && theme.valine.appId && theme.valine.appKey){ %>
-      <%- partial('comments/valine') %>
+      <% if (theme.Valine.enable && theme.Valine.appId && theme.Valine.appKey){ %>
+        <%- partial('comments/Valine') %>
+      <% }else if (theme.Artalk.enable && theme.Artalk.serverUrl && theme.Artalk.pageKey){ %>
+        <%- partial('comments/Artalk') %>
       <% } %>
-
     </section>
   <% } %>
 <% } %>

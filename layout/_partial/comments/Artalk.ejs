@@ -1,0 +1,23 @@
+<link href="https://cdn.jsdelivr.net/gh/monsterxcn/Artalk@master/dist/Artalk.css" rel="stylesheet">
+<div id="ArtalkComments"></div>
+<script src="/js/artalk.js"></script>
+<script>
+    new Artalk({
+        el: "#ArtalkComments",
+        placeholder: "<%= theme.Artalk.placeholder %>",
+        noComment: "<%= theme.Artalk.noComment %>",
+        sendBtn: "<%= theme.Artalk.sendBtn %>",
+        defaultAvatar: "<%= theme.Artalk.defaultAvatar %>",
+        pageKey: <%= theme.Artalk.pageKey %>,
+        serverUrl: "<%= theme.Artalk.serverUrl %>",
+        readMore: {
+            pageSize: <%= theme.Artalk.pageSize %>,
+            autoLoad: <%= theme.Artalk.autoLoad %>
+        },
+        gravatar: {
+            cdn: "<%= theme.Artalk.cdn %>"
+        },<%if(theme.Artalk.emoticons !=undefined){%>
+        moticons:
+            <%- theme.Artalk.emoticons %><%}%>
+    })
+</script>
